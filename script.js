@@ -4,6 +4,7 @@ const bossesImg = ['img/boss1.png', 'img/boss2.png', 'img/boss3.png'];
 const instructionsText = document.querySelector('.game-instructions');
 const startButton = document.querySelector('.start-button');
 let bossInterval;
+var pontuacao = document.querySelector('.pontuacao');
 
 //movimentação e interação
 
@@ -79,6 +80,9 @@ function moveLaser(laser) {
                 boss.src = 'img/explosion.png';
                 boss.classList.remove('boss');
                 boss.classList.add('dead-boss');
+                var currentScore = parseInt(pontuacao.innerText);
+                currentScore++;
+                pontuacao.innerText = currentScore;
             }
         })
         
